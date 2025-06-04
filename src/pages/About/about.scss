@@ -1,0 +1,53 @@
+// General Styles
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f4; // Light background for contrast
+	color: black;
+}
+
+.home {
+	padding: 2rem;
+}
+
+.top-section {
+	max-width: 900px;
+	margin: 0 auto; // Center the content
+	border-radius: 8px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+	padding: 2rem;
+}
+
+// About Section Styles
+.about {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem; // Space between items
+}
+
+.about-item {
+	padding: 1.5rem;
+	border-left: 5px solid #2980b9; // Accent line
+	background-color: black; // Slightly different background for items
+	border-radius: 5px;
+	transition: background-color 0.3s;
+
+	&:hover {
+		background-color: #2980b9;
+		h1 {
+			color: black;
+		} // Change background on hover
+	}
+
+	h2 {
+		font-size: 1.8rem;
+		color: #2980b9; // Heading color
+		margin-bottom: 0.5rem;
+	}
+
+	p {
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+}
+
+// Responsive Styles
