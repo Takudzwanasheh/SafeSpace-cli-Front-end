@@ -1,6 +1,7 @@
 import React from "react";
 import "./privacy.scss";
-export default function () {
+
+export default function Privacy() {
 	return (
 		<div className='container'>
 			<h1>Privacy Policy</h1>
