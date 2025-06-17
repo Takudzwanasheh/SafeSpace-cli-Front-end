@@ -1,8 +1,12 @@
 import React from "react";
 import "./home.scss";
 import { NavLink } from "react-router-dom";
+import { AuthContect } from "../../pages/helpers/AuthContect";
+import { useContext } from "react";
 
 export default function Home() {
+	const { authState } = useContext(AuthContect);
+
 	return (
 		<div className='container'>
 			<div className='topsection'>
@@ -18,9 +22,12 @@ export default function Home() {
 						experiences, and connect with others who understand.",
 					</p>
 				</div>
-				<div className='User-feedback'>
-					<NavLink>What Our Users Say</NavLink>
-				</div>
+				{authState && (
+					<div className='User-feedback'>
+						<NavLink>What Our Users Say</NavLink>
+						<NavLink to={"new-entry"}>Get Started</NavLink>
+					</div>
+				)}
 			</div>
 		</div>
 	);

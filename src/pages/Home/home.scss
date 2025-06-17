@@ -6,8 +6,6 @@
 
 	.topsection {
 		box-shadow: 2px 1px 9px 3px rgba(0, 0, 0, 0.75);
-		-webkit-box-shadow: 2px 1px 9px 3px rgba(0, 0, 0, 0.75);
-		-moz-box-shadow: 2px 1px 9px 3px rgba(0, 0, 0, 0.75);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -19,33 +17,81 @@
 		background-size: cover;
 		width: 100%;
 		height: 80vh;
+
 		h1 {
 			color: white;
+			font-size: 2.5rem; // Adjusted for better visibility
 		}
 	}
 
 	.Joinus {
 		display: flex;
 		flex-direction: column;
-		justify-content: left;
+		justify-content: flex-start; // Changed to flex-start for consistency
 		margin-top: 0.5rem;
 		box-shadow: 6px -4px 16px 1px rgba(0, 0, 0, 0.74);
-		-webkit-box-shadow: 6px -4px 16px 1px rgba(0, 0, 0, 0.74);
-		-moz-box-shadow: 6px -4px 16px 1px rgba(0, 0, 0, 0.74);
 		padding: 1rem;
 		margin-bottom: 1rem;
+
 		span {
 			text-align: left;
 			font-weight: bold;
 		}
+
 		p {
 			text-align: left;
 		}
 	}
 
 	.User-feedback {
+		display: flex;
+		flex-direction: column;
+
 		a {
 			color: aqua;
+		}
+	}
+}
+
+// Media Queries for Responsiveness
+@media (max-width: 768px) {
+	.topsection {
+		height: 60vh; // Reduced height for smaller screens
+		h1 {
+			font-size: 2rem; // Adjusted font size for smaller screens
+		}
+	}
+
+	.Joinus {
+		padding: 0.5rem; // Reduced padding for smaller screens
+	}
+
+	.User-feedback {
+		a {
+			font-size: 0.9rem; // Smaller font size for links
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		margin: 0.5rem; // Reduced margin for very small screens
+	}
+
+	.topsection {
+		height: 50vh; // Further reduced height for very small screens
+		h1 {
+			font-size: 1.5rem; // Smaller font size for very small screens
+		}
+	}
+
+	.Joinus {
+		padding: 0.3rem; // Further reduced padding
+	}
+
+	.User-feedback {
+		a {
+			font-size: 0.8rem; // Even smaller font size for links
 		}
 	}
 }

@@ -6,6 +6,7 @@
 .navbar {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 
 	.top-header {
 		background: linear-gradient(
@@ -16,14 +17,13 @@
 		);
 		display: flex;
 		color: white;
-		justify-content: center;
+		justify-content: space-between;
 		align-items: center;
+		padding: 0.5rem 1rem;
 
 		.logo {
 			display: flex;
-			margin-left: 1rem;
 			align-items: center;
-			flex: 1;
 
 			img {
 				width: 5rem;
@@ -31,14 +31,20 @@
 				object-fit: contain;
 			}
 		}
+
 		.links {
 			display: flex;
 			align-items: center;
 			gap: 1rem;
-			flex: 5;
+
 			a {
 				color: white;
 				text-decoration: none;
+
+				&:hover {
+					color: aqua;
+					text-decoration: underline;
+				}
 			}
 
 			.search {
@@ -60,11 +66,8 @@
 		}
 
 		.logout {
-			display: flex;
 			color: white;
-			margin-right: 1rem;
 			gap: 1rem;
-			flex: 1;
 		}
 	}
 
@@ -74,24 +77,17 @@
 		justify-content: space-between;
 		height: 2.5rem;
 		color: whitesmoke;
-		gap: 6rem;
 		align-items: center;
+		padding: 0 1rem;
+
 		.logo {
 			display: flex;
 			align-items: center;
-			flex: 1;
-			margin-left: 1rem;
-			.logo {
-				display: flex;
-				align-items: center;
-				color: rgb(54, 184, 188);
-				margin-left: 1rem;
-				flex: 1;
+			gap: 0.2rem;
 
-				a {
-					color: rgb(54, 184, 188);
-					text-decoration: none;
-				}
+			a {
+				color: rgb(54, 184, 188);
+				text-decoration: none;
 			}
 		}
 	}
@@ -99,12 +95,72 @@
 	.logout {
 		text-align: right;
 		color: rgb(54, 184, 188);
-		display: flex;
 		gap: 1rem;
-		flex: 1;
+		display: flex;
+
 		a {
 			color: rgb(54, 184, 188);
 			text-decoration: none;
 		}
+	}
+}
+
+// Media Queries for Responsiveness
+@media (max-width: 768px) {
+	.top-header {
+		.links {
+			display: none;
+			width: 100%;
+			align-items: flex-start;
+
+			.search {
+				display: none;
+				margin-top: 0.5rem;
+			}
+		}
+
+		.logout {
+			justify-content: center;
+			width: 80%;
+			margin-top: 0.5rem;
+
+			a {
+				padding: 0.2rem;
+				button {
+					padding: 0.3rem;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	.second-header {
+		display: flex;
+		align-items: flex-start;
+		height: auto;
+		padding: 0.5rem 0;
+	}
+}
+
+@media (max-width: 480px) {
+	.top-header {
+		padding: 0.5rem;
+
+		.links {
+			display: none;
+			gap: 0.5rem;
+
+			a {
+				font-size: 0.9rem;
+			}
+		}
+
+		.logout {
+			font-size: 0.9rem;
+		}
+	}
+
+	.second-header {
+		padding: 0.5rem;
 	}
 }

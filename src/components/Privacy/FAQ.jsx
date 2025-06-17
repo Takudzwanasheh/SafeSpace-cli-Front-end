@@ -30,7 +30,7 @@ export default function FAQ() {
 		{
 			question: "How can I contact support?",
 			answer:
-				"You can reach our support team through the contact form on our website or by emailing us at [Your Email Address].",
+				"You can reach our support team through the contact form on our website or by emailing us at safespace@gmail.com",
 		},
 	];
 	return (

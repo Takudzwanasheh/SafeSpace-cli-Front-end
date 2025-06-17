@@ -1,16 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import {
-	Search,
-	Home,
-	Add,
-	Person,
-	Message,
-	Translate,
-} from "@mui/icons-material";
+
+import { Book, Home, Add } from "@mui/icons-material";
 import "./navbar.scss";
+import { useContext } from "react";
+import { AuthContect } from "../../pages/helpers/AuthContect";
 
 export default function Navbar() {
+	const { authState, setAuthState } = useContext(AuthContect);
 	return (
 		<div className='navbar'>
 			<div className='top-header'>
@@ -22,7 +19,6 @@ export default function Navbar() {
 					{/* <span className='text'>MyDiarry</span> */}
 				</div>
 				<div className='links'>
-					<NavLink className='link'>Public-Entries</NavLink>
 					<NavLink to={"/about"} className='link'>
 						About
 					</NavLink>
@@ -32,58 +28,57 @@ export default function Navbar() {
 					<NavLink to={"faq"} className='link'>
 						FAQ
 					</NavLink>
-					<NavLink className='link'>Donate</NavLink>
-					<div className='search'>
-						<Search className='icon' />
-						<input
-							type='text'
-							placeholder='Search...'
-							className='search-input'
-						/>
-					</div>
 				</div>
 
 				<div className='logout'>
-					<span className='link'>Languages</span>
-					<span className='link'>Socials</span>
-				</div>
-			</div>
-
-			<div className='second-header'>
-				<div className='logo'>
-					<div className='logo'>
-						<Home className='icon' />
-						<NavLink to={"/"} className='text'>
-							Home
+					{!authState ? (
+						<NavLink to={"/login"} className='link'>
+							<button>Login</button>
 						</NavLink>
-					</div>
-					<div className='logo'>
-						<Add className='icon' />
-						<NavLink className='text'>MyEntries</NavLink>
-					</div>
-					<div className='logo'>
-						<Add className='icon' />
-						<NavLink className='text'>WriteNewEntry</NavLink>
-					</div>
-					<div className='logo'>
-						<Person classname='icon' />
-						<NavLink className='text'>Account</NavLink>
-					</div>
-					<div className='logo'>
-						<Message className='icon' />
-						<NavLink className='text'>Messages</NavLink>
-					</div>
-					<div className='logo'>
-						<Translate className='icon' />
-						<NavLink className='link'>Translate</NavLink>
-					</div>
-				</div>
-
-				<div className='logout'>
-					<NavLink className='link'>Welcome,Takudzwanashe</NavLink>
-					<NavLink className='link'>Logout</NavLink>
+					) : (
+						<NavLink className='link'>
+							<button
+								onClick={() => {
+									setAuthState(false);
+									localStorage.removeItem("accessToken");
+								}}
+							>
+								Logout
+							</button>
+						</NavLink>
+					)}
 				</div>
 			</div>
+			{authState && (
+				<>
+					<div className='second-header'>
+						<div className='logo'>
+							<div className='logo'>
+								<Home className='icon' />
+								<NavLink to={"/"} className='text'>
+									Home
+								</NavLink>
+							</div>
+							<div className='logo'>
+								<Book className='icon' />
+								<NavLink to={"/my-entries"} className='text'>
+									MyEntries
+								</NavLink>
+							</div>
+							<div className='logo'>
+								<Add className='icon' />
+								<NavLink to={"/new-entry"} className='text'>
+									WriteNewEntry
+								</NavLink>
+							</div>
+						</div>
+
+						<div className='logout'>
+							<NavLink className='link'>MR-MRS</NavLink>
+						</div>
+					</div>
+				</>
+			)}
 		</div>
 	);
 }
