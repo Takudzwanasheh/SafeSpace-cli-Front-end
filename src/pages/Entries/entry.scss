@@ -199,7 +199,6 @@
 
 @media (max-width: 480px) {
 	.container {
-		width: 90%;
 		gap: 1rem; // Reduce gap on very small screens
 
 		h1 {
@@ -207,13 +206,15 @@
 		}
 
 		.previous-posts {
+			width: 100%;
 			span {
+				width: 100%;
 				font-size: 1.2rem; // Smaller font size for span
 			}
 
 			p {
-				width: 50%;
-				line-height: 1.5rem; // Adjust line height
+				width: 100%;
+				line-height: 1.5rem;
 			}
 			div {
 				display: flex;
