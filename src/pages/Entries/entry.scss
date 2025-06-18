@@ -88,6 +88,7 @@
 	.previous-posts {
 		display: flex;
 		flex-direction: column;
+		flex-wrap: wrap;
 		width: 40rem;
 		flex-wrap: wrap;
 
@@ -103,7 +104,11 @@
 			text-align: left;
 			line-height: 1.7rem;
 		}
-
+		div {
+			width: 70%;
+			display: flex;
+			flex-wrap: wrap;
+		}
 		.comment {
 			display: flex;
 			align-items: center;
@@ -188,12 +193,13 @@
 	}
 
 	.previous-posts {
-		width: 100%; // Full width on small screens
+		width: 80%; // Full width on small screens
 	}
 }
 
 @media (max-width: 480px) {
 	.container {
+		width: 90%;
 		gap: 1rem; // Reduce gap on very small screens
 
 		h1 {
@@ -206,9 +212,14 @@
 			}
 
 			p {
+				width: 60%;
 				line-height: 1.5rem; // Adjust line height
 			}
-
+			div {
+				display: flex;
+				flex-direction: column;
+				width: 40%;
+			}
 			.comment {
 				input {
 					width: 70%; // Wider input on small screens

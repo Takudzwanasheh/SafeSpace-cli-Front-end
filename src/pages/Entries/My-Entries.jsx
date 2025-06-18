@@ -39,9 +39,9 @@ export default function MyEntries() {
 					<div className='previous-posts' key={item._id || index}>
 						<span>{item.title}</span>
 
-						<p>
-							{displayText} {item.date}
-						</p>
+						{displayText.split("\n").map((para, i) => (
+							<p key={i}>{para}</p>
+						))}
 
 						<div>
 							{item.message.length > 300 && (
