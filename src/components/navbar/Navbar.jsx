@@ -74,7 +74,7 @@ export default function Navbar() {
 						</div>
 
 						<div className='logout'>
-							<NavLink className='link'>MR-MRS</NavLink>
+							<NavLink className='link'>MR & MRS</NavLink>
 						</div>
 					</div>
 				</>

@@ -50,9 +50,9 @@ export default function MyEntries() {
 								</button>
 							)}
 
-							<NavLink to={`/comments/${item.id}`}>
+							{/* <NavLink to={`/comments/${item.id}`}>
 								More About This Post
-							</NavLink>
+							</NavLink> */}
 						</div>
 					</div>
 				);
